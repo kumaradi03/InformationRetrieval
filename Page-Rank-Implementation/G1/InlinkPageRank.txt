@@ -1,0 +1,5 @@
+('International_Standard_Book_Number', 479) 
+('Digital_object_identifier', 454) 
+('Renewable_energy', 420) 
+('Efficient_energy_use', 280) 
+('United_States', 253) 

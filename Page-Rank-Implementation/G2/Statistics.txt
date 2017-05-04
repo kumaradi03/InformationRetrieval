@@ -1,0 +1,12 @@
+Number of Sinks : 66175
+Number of Sources : 14350
+Total Number of Pages : 183811
+
+Proportion of Sinks = Number of Sinks / Total Number of Pages
+					= 66175/183811
+					= 0.3600165
+
+Proportion of Sources = Number of Sources / Total Number of Pages
+					  = 14350/183811
+					  = 0.0780693
+

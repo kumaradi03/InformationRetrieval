@@ -1,0 +1,11 @@
+Number of Sinks: 9
+Number of Sources: 0
+Total Number of Pages : 1000
+
+Proportion of Sinks = Number of Sinks / Total Number of Pages
+					= 9/1000
+					= 0.009
+
+Proportion of Sources = Number of Sources / Total Number of Pages
+					  = 0/1000
+					  = 0

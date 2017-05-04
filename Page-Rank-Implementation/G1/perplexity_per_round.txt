@@ -1,0 +1,14 @@
+Perplexity value: 593.529377619 for the iteration: 1
+Perplexity value: 563.967297728 for the iteration: 2
+Perplexity value: 523.937510731 for the iteration: 3
+Perplexity value: 504.808594617 for the iteration: 4
+Perplexity value: 492.809522729 for the iteration: 5
+Perplexity value: 485.060494006 for the iteration: 6
+Perplexity value: 480.038937117 for the iteration: 7
+Perplexity value: 476.710297502 for the iteration: 8
+Perplexity value: 474.513444437 for the iteration: 9
+Perplexity value: 473.045804609 for the iteration: 10
+Perplexity value: 472.06580755 for the iteration: 11
+Perplexity value: 471.407756613 for the iteration: 12
+Perplexity value: 470.965875314 for the iteration: 13
+Perplexity value: 470.6684179 for the iteration: 14

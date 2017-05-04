@@ -1,0 +1,37 @@
+Page Rank of a document is the probability of visiting that document by a random surfer. Implementing Page rank algorithm ensures that there are no sinks or loops in a web graph. It measures the probability based on the number of inlinks and outlinks of a document. If we rank the pages based on their inlinks count and compare it with the top 5 pages ranked by using page rank algorithm for a particular web-graph, we might find few common doc-ids but its not always necessary that pages with maximum inlinks will always make it to the top 5 pages in page rank or vice-versa.
+
+Page rank of a page depends on the page rank value from each of those inlinks divided by the count of outlinks from each of those inlinks. Hence we can establish that with the increase in number of outlinks, the proportional page-rank value decreases from each of those inlinks which in turn reduces the page rank of the current page. The page rank of a page does not depend directly on the outlinks of its own page, but the page rank of the outlink pages from the current page would depend on the number of outlinks of that current page, and since the entire web-graph is connected using the teleportation factor, in the long run, the outlink count of one's own page would affect its own page rank, since the outlink pages of the current page might be a direct or indirect inlink to the current page. Hence with the increase in the outlinks in a particular page would indirectly decrease its own page rank.
+
+Page rank also depends on the page rank value of its inlinks and not just on the count of inlinks, hence if a pages has inlinks from more popular pages, i.e. from pages having high page rank, the page rank of the current page might become greater than say another page which has a higher number of low page-rank value inlinks. As a result the summation of those individual low page-rank inlink values might be lesser than the summation high-page rank values from fewer inlinks of another page.
+
+On comparing the top 5 pages by inlinks and page rank algorithm from Graph 2 as mentioned below, we can see that the first page in both the rankings is the same page. This holds true because in page rank algorithm, inlink count is indeed an important factor as with the increase in the inlink count, as there would be an increase in the number of inlink page rank proportions getting added to the page rank of the current page. On further analysis, it would be noticed that none of the other 4 pages from either of the rankings match, which clearly settles the fact, that page rank is not only affected by a high inlink count but also by other factors such as number of outlinks from each of those inlinks page or the number of sinks in that web graph or the number of loops involved in the graph. WT21-B37-75 might have higher valued page-rank inlinks compared to WT18-B29-37, as a result the factor of inlink count is overshadowed. Similarly, if we check the web page WT18-B29-37, which has the second-most high number of inlinks, we will notice that this page has a high number of outlinks too, which reduces the page rank of those pages whom WT18-B29-37 point to, as a result, in the long run, as established above, the page rank value of WT18-B29-37 is also decreasing. Whereas the webpage WT21-B37-75 from the page-rank graph has only 3 outlinks which increases its probability of getting visited by a random surfer, even though its inlinks count is considerably lower than WT18-B29-37, because the individual page rank proportions coming from each of its inlinks is comparatively higher than WT18-B29-37 as the outlinks count of each of those inlinks is comparatively lower than the outlinks count of WT18-B29-37's inlinks. Since ranking by inlink count does not ensure whether the document is a sink page or points to dead pages or is one of loop pages, the probability of visiting that document isn't standardized.
+
+The top 5 pages by inlinks from Graph 2 are as follows in descending order:-
+('WT21-B37-76', 2568) 
+('WT18-B29-37', 2269) 
+('WT01-B18-225', 2260) 
+('WT23-B27-29', 1940) 
+('WT21-B37-75', 1704) 
+
+The top 5 pages by page rank from Graph 2 are as follows in descending order:-
+('WT21-B37-76', 0.002679410057594001)
+('WT21-B37-75', 0.0015259169938491943)
+('WT25-B39-116', 0.0014694935259429026)
+('WT23-B21-53', 0.001372322043626136)
+('WT24-B40-171', 0.0012450717566983612)
+
+On comparing the top 5 pages by inlinks and page rank algorithm from Graph 1 as mentioned below, we can see that there are 3 common pages in both the rankings and the top 2 pages from both the rankings have their order interchanged in either of ther rankings. Even though International_Standard_Book_Number article has the highest number of inlinks, it could not be the top ranking page in the page rank list because the page rank proportions coming from each of it's inlink is comparatievly lesser than than the page-rank value of each of the inlinks of Digital_object_identifier, which has the second most high number of inlinks. As a result the summation of the individual inlinks page rank of International_Standard_Book_Number is lesser than summation of the individual inlinks page rank of Digital_object_identifier, hence the interchange in the rankings. The same logic stands for the rest of the rankings.
+
+The top 5 pages by inlinks from Graph 1 are as follows in desecending order:-
+('International_Standard_Book_Number', 479) 
+('Digital_object_identifier', 454) 
+('Renewable_energy', 420) 
+('Efficient_energy_use', 280) 
+('United_States', 253) 
+
+The top 5 pages by page-rank from Graph 1 are as follows in descending order:-
+('Digital_object_identifier', 0.0376933928868338)
+('International_Standard_Book_Number', 0.02885493570966445)
+('PubMed_Identifier', 0.02541247976295415)
+('Japan', 0.019493735673671023)
+('United_States', 0.01819053089681608)
