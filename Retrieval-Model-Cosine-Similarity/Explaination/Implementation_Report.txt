@@ -1,0 +1,56 @@
+Report on the implementation details:
+-------------------------------------
+
+The following steps have been implemented in "index_generator.py"	to score documents based on Vector Space Model using Cosine Similarity:-
+
+Step 1: Using the corpus inside the "generated_corpus" folder, generate the inverted index for the unigrams.
+Step 2: Normalize the tfs for each term document-wise in the inverted index
+	Step 2A: Fetch the term frequency of a particular term, say t1, for a particular document and divide it by the total number of tokens present in the document, say D1.
+	Step 2B: Normalized_term_frequency of t1 in D1 = (Frequency of t1 in D1) / (Total number of tokens in D1) 
+Step 3: Multiply idf for each term with the normalized tfs of each term document-wise in the inverted index.
+	Step 3A: idf or inverse_document_frequency of a term, say t1 is 1.0 + log((Total no. of documents in the corpus) / ((No. of documents in which t1 is present) + 1)
+	Step 3B: Store (Normalized_term_frequency * idf),i.e. tf*idf for each term document-wise in the inverted_index
+Step 4: Fetch queries from "query.txt"
+Step 5: For each query from "query.txt", repeat the following steps:
+	Step 5A: Generate a dictionary having query terms as keys and their respective frequencies in the query as values.
+	Step 5B: Normalize the tfs for each term by dividing the respective tfs with the number of tokens in query - (tf of a term)/(total number of tokens in query)
+	Step 5C: Extract a reduced_inverted_index from the original inverted_index for only those terms present in the query.
+	Step 5D: Using the reduced_inverted_index, we can fetch the number of documents in which a given term is present for each of the query terms.
+	Step 5E: Using Step 5D, we can generate the idf for each of the given query terms using same formulae mentioned above for idf.
+	Step 5F: Generate a dictionary having query terms as keys and their respective (Normalized_tfs * idfs) i.e. tf*idf as values
+	Step 5G: Generate a dictionary for storing Magnitude of each document vectors as values, having all the document ids present in the reduced_inverted_index as keys
+	Step 5H: To calculate Magnitude of document(say D1) vector, following steps are used:
+		Step 5H i  : Fetch the tf*idf for ALL THE TERMS present in D1 using original inverted_index individually.
+		Step 5H ii : Square the individual tf*idf and add keep adding the squared values for D1 terms.
+		Step 5H iii: Once all the squared tf*idf has been added, square root the sum and store it as (Magnitude of D1 vector) in the dictionary for D1 key.
+	Step 5I: Calculate Magnitude of query vector by adding the square of the tf*idfs of each query terms and then square root of the sum.
+	Step 5J: Generate a dictionary with Dot_Product(Q, Di) as values and the document ids present in the reduced_inverted_index as keys.
+	Step 5K: To calculate Dot_Product(Q, Di), following steps have been implemented:
+		Step 5K i  : Fetch the tf*idf for a query term, say t1, and then fetch the tf*idf for the same term t1 for a given document D1
+		Step 5K ii : Multiply the query weights and document D1 weights and add the products and then store the final sum as Dot_Product(Q, Di)
+	Step 5L: Calculate the cosine similarity scores for each document present as key in dictionary of Dot_Product(Q, Di) using the formulae:
+			 Cosine Similarity(Q, D1) = Dot Product (Q, D1) / (Magnitude of Query Vector Q) * (Magnitude of Document Vector D1)
+	Step 5M: Sort the documents as per the cosine similarity scores in a decreasing order.
+	Step 5N: Print the top 100 documents with highest similarity scores for a given query in mentioned format:
+			 QueryID 'Q0' DocName(DocID) Rank CosineSim_Score 'Vector_Space_Model'
+
+
+Explainations behind the implementation methodology:
+---------------------------------------------------
+
+-- I have normalized the term frequencies of each individual term in the inverted_index as well as in the query, because the length of each document or query may vary from each other and hence the importance of a particular term say t1 in documents, say D1 and D2, should depend upon the length of D1 and D2. If both the documents have the same term frequencies for t1 but the length of D2 is more than D1, then the importance of t1 in D1 is more than in D2. 
+
+-- In this program, I have considered the term weights for both query and document terms as (normalized_tf * idf) because the normalized_tf component explains the importance of a term in a particular document or in a query, irrespective of its size and the inverse document frequency or idf explains the distributed importance of a term in a set of documents. The idf factor negates the usefulness of a term which appears in a lot of documents from a given a set of documents.
+
+-- During the calculation of idf, I am adding 1 to the denominator, such that the equation is never divided by 0, when the term doesnot appear in any document. I am also adding 1 to the log value to prevent idf = 0 as it would be multiplied with normalized tfs to calculate the term weights.
+
+-- In this program, ALL THE TERMS present in a given document is considered as different axes of vector_space_model for calculating the (Magnitude of Document vector).
+
+
+			 
+			 
+
+	
+	
+	
+	

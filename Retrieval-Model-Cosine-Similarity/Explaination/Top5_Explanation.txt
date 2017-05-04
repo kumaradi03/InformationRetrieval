@@ -1,0 +1,166 @@
+The comparison between the top 5 results of Lucene Model and our VSM model search engines for all the four queries are as follows:
+----------------------------------------------------------------------------------------------------------------------------------
+
+Query 1: global warming potential
+----------------------------------
+Lucene:
+
+1 Q0 Globalwarming(doc_id = 393) 1 0.287024 LuceneModel
+1 Q0 JosephRomm(doc_id = 490) 2 0.23315513 LuceneModel
+1 Q0 UnitedNationsFrameworkConventiononClimateChange(doc_id = 937) 3 0.20359072 LuceneModel
+1 Q0 Environmentalimpactoftheenergyindustry(doc_id = 311) 4 0.1843843 LuceneModel
+1 Q0 Climatechange(doc_id = 139) 5 0.1762412 LuceneModel
+
+VSM:
+
+1 Q0 Globalwarming(doc_id = 394) 1 0.290557708755 Vector_Space_Model
+1 Q0 Environmentalimpactoftheenergyindustry(doc_id = 312) 2 0.102279444731 Vector_Space_Model
+1 Q0 Climatechangemitigation(doc_id = 141) 3 0.101949341038 Vector_Space_Model
+1 Q0 88888LightsOut(doc_id = 7) 4 0.100338553146 Vector_Space_Model
+1 Q0 Energyconsumption(doc_id = 262) 5 0.0912259856476 Vector_Space_Model
+
+Comparison:
+------------
+The number of hits for query - "global warming potential" in Lucene Model : 667
+
+By comparing the above two tables, we can analyze that both tables have only 2 documents 'Globalwarming' and 'Environmentalimpactoftheenergyindustry' in common. In both the models, document 'Globalwarming' ranks 1 having almost similar scores.
+
+On further analysis of the rest of documents from both the tables, we can state the following results: -
+
+The 2nd ranked document in Lucene - 'JosephRomm'- appears in rank 6 of VSM model.
+The 3rd ranked document in Lucene - 'UnitedNationsFrameworkConventiononClimateChange'- appears in rank 9 of VSM model.
+The 5th ranked document in Lucene - 'Climatechange'- appears in rank 8 of VSM model.
+
+The 3rd ranked document in VSM - 'Climatechangemitigation'- appears in rank 6 of Lucene Model.
+The 4th ranked document in VSM - '88888LightsOut'- appears in rank 11 of Lucene Model.
+The 5th ranked document in VSM - 'Energyconsumption'- appears in rank 7 of Lucene Model.
+
+From the above anaylysis, we can say that there is a high degree of overlap between the results of Lucene and VSM model with minor variations in the generated score.
+
+Query 2: green power renewable energy
+--------------------------------------
+
+Lucene:
+
+2 Q0 Renewableenergypayments(doc_id = 759) 1 0.42168897 LuceneModel
+2 Q0 3Degrees(doc_id = 4) 2 0.385054 LuceneModel
+2 Q0 Greenjob(doc_id = 409) 3 0.35338685 LuceneModel
+2 Q0 RenewableenergyinMexico(doc_id = 736) 4 0.352606 LuceneModel
+2 Q0 RenewableenergyinIndia(doc_id = 730) 5 0.34615633 LuceneModel
+
+VSM:
+
+2 Q0 Renewableenergypayments(doc_id = 760) 1 0.422282864841 Vector_Space_Model
+2 Q0 RenewableenergyinMexico(doc_id = 737) 2 0.39251681931 Vector_Space_Model
+2 Q0 Cleanenergy(doc_id = 137) 3 0.351082107622 Vector_Space_Model
+2 Q0 Sustainableenergy(doc_id = 871) 4 0.350843864684 Vector_Space_Model
+2 Q0 10025renewableenergy(doc_id = 1) 5 0.330149039216 Vector_Space_Model
+
+Comparison:
+-----------
+The number of hits for query - 'green power renewable energy' in Lucene Model : 916
+
+By comparing the above two tables, we can analyze that both tables have only 2 documents 'Renewableenergypayments' and 'RenewableenergyinMexico' in common. In both the models, document 'Renewableenergypayments' ranks 1 having almost similar scores.
+
+On further analysis of the rest of documents from both the tables, we can state the following results: -
+
+The 2nd ranked document in Lucene - '3Degrees'- appears in rank 83 of VSM model.
+The 3rd ranked document in Lucene - 'Greenjob'- appears in rank 16 of VSM model.
+The 5th ranked document in Lucene - 'RenewableenergyinIndia'- appears in rank 18 of VSM model.
+
+The 3rd ranked document in VSM - 'Cleanenergy'- appears in rank 8 of Lucene Model.
+The 4th ranked document in VSM - 'Sustainableenergy'- appears in rank 9 of Lucene Model.
+The 5th ranked document in VSM - '10025renewableenergy'- appears in rank 68 of Lucene Model.
+
+From the above anaylysis, we can say that there is a varied degree of overlap between the results of Lucene and VSM model with considerable variations in the generated score and hence in rankings too. The similarity score for this query is not properly distributed between search results of two models. 
+
+Query 3: solar energy california
+---------------------------------
+
+Lucene:
+
+3 Q0 NevadaSolarOne(doc_id = 591) 1 0.33522463 LuceneModel
+3 Q0 Solarpower(doc_id = 813) 2 0.3234093 LuceneModel
+3 Q0 SolarDecathlon(doc_id = 807) 3 0.29575533 LuceneModel
+3 Q0 California(doc_id = 94) 4 0.28814912 LuceneModel
+3 Q0 Solarthermal(doc_id = 815) 5 0.27886677 LuceneModel
+
+VSM:
+
+3 Q0 Solarenergy(doc_id = 809) 1 0.37326315197 Vector_Space_Model
+3 Q0 California(doc_id = 95) 2 0.362981533957 Vector_Space_Model
+3 Q0 Solarpower(doc_id = 814) 3 0.3262195818 Vector_Space_Model
+3 Q0 RenewableenergyinAsia(doc_id = 713) 4 0.31845042096 Vector_Space_Model
+3 Q0 NevadaSolarOne(doc_id = 592) 5 0.276909023698 Vector_Space_Model
+
+Comparison:
+-----------
+The number of hits for query - 'solar energy california' in Lucene Model : 867
+
+By comparing the above two tables, we can analyze that both tables have 3 documents 'NevadaSolarOne', 'Solarpower' and 'California' in common but with minor variations in generated score and hence in rankings too. 
+
+On further analysis of the rest of documents from both the tables, we can state the following results: -
+
+The 3rd ranked document in Lucene - 'SolarDecathlon'- appears in rank 87 of VSM model.
+The 5th ranked document in Lucene - 'Solarthermal'- appears in rank 6 of VSM model.
+
+The 1st ranked document in VSM - 'Solarenergy'- appears in rank 8 of Lucene Model.
+The 4th ranked document in VSM - 'RenewableenergyinAsia'- appears in rank 55 of Lucene Model.
+
+From the above anaylysis, we can say that there is a moderate degree of overlap between the results of Lucene and VSM model. Here, even though 3 results match from smaller subset of actual results, but on a broader aspect, the similarity score for this query is not properly distributed between the search results of two models. Hence we can conclude that the degree of overlap of similarity scores for query 3 is better than query 2 but not better than query 1. 
+
+Query 4: light bulb bulbs alternative alternatives
+---------------------------------------------------
+
+Lucene:
+
+4 Q0 Phaseoutofincandescentlightbulbs(doc_id = 651) 1 0.6262964 LuceneModel
+4 Q0 Incandescentlightbulbs(doc_id = 454) 2 0.39431155 LuceneModel
+4 Q0 Incandescentlightbulb(doc_id = 453) 3 0.39315176 LuceneModel
+4 Q0 Energysavinglamp(doc_id = 290) 4 0.330417 LuceneModel
+4 Q0 LEDlamp(doc_id = 500) 5 0.22806744 LuceneModel
+
+
+VSM:
+
+4 Q0 Phaseoutofincandescentlightbulbs(doc_id = 652) 1 0.429655749403 Vector_Space_Model
+4 Q0 Incandescentlightbulbs(doc_id = 455) 2 0.301996058513 Vector_Space_Model
+4 Q0 Incandescentlightbulb(doc_id = 454) 3 0.30065082545 Vector_Space_Model
+4 Q0 LEDlamp(doc_id = 501) 4 0.231854993916 Vector_Space_Model
+4 Q0 LEDlights(doc_id = 502) 5 0.231583252937 Vector_Space_Model
+
+Comparison:
+-----------
+The number of hits for query - 'light bulb bulbs alternative alternatives' in Lucene Model : 538
+
+By comparing the above two tables, we can analyze that both tables have 4 documents 'Phaseoutofincandescentlightbulbs', 'Incandescentlightbulbs', 'Incandescentlightbulb' and 'LEDlamp' in common. In both the models, document 'Phaseoutofincandescentlightbulbs' ranks 1, 'Incandescentlightbulbs' ranks 2 and  'Incandescentlightbulb' ranks 3.
+
+On further analysis of the rest of documents from both the tables, we can state the following results: -
+
+The 4th ranked document in Lucene - 'Energysavinglamp'- appears in rank 8 of VSM model.
+
+The 5th ranked document in VSM - 'LEDlights'- appears in rank 6 of Lucene Model.
+
+From the above anaylysis, we can say that there is a very high degree of overlap between the results of Lucene and VSM model and in comparison to the result sets of the other queries, this query has the highest degree of overlap of results between the two search models.
+
+
+
+General Inference :
+-------------------
+
+On closer inspection of the document scores and number of hits in Lucene Model and comparison of results between Lucene Model and our implemented VSM model, we can conclude that the degree of overlap between the result sets of the two search models is inversly proportional to the number of hits for a query in Lucene Model.
+
+For instance :-
+
+Query 4 - 'light bulb bulbs alternative alternatives' has the highest degree of overlap of results for two models and has the least number of hits in Lucene model, i.e. 538.
+
+Query 1 - 'global warming potential' has the second highest degree of overlap of results for two models and has the second least number of hits in Lucene Model, i.e. 667.
+
+Query 3 - 'solar energy california' has a moderate degree of overlap of results for two models and has a higher number of hits in Lucene Model than query 4 and 1, i.e. 867.
+
+Query 2 - 'green power renewable energy' has the worst degree of overlap of results in comparison to the other queries for two search models and has the highest number of hits in Lucene Model, i.e. 916.
+
+
+Here, in the Lucene model, the number of hits means the number of documents out of the total 1000 documents, which contains all the query terms in it. The factor of number of hits come into play because Lucene combines the result of Boolean model (BM) and Vector Space Model (VSM) of Information Retrieval.
+
+Since our model is solely based on Vector Space Model, it does not take into consideration the result of Boolean model (BM). Now if the number of hits in Lucene for a particular query is low, it indicates that the contribution of BM model for generation of score is low too, in comparison to the contribution of VSM model in Lucene. In such a scenario, the overlap between the resultset of Lucene Model and our implemented VSM model would be high, as seen for query 4 with minimum number of hits as 538. But if the number of hits is high for a query, it indicates that the dependency on BM model for generation of score is pretty high too in comparison to the dependency on VSM model in Lucene, and hence the resultset of such a scenario would be considerably different from the resultset of our solely implemented VSM model, as seen in query 2 with maximum number of hits - 916. This is happening because the majority of the resultset of Lucene is affected by the result of BM model, but when VSM model affects the majority of the resultset of Lucene, the resultset overlap considerably with the resultset of our implemented VSM model.
