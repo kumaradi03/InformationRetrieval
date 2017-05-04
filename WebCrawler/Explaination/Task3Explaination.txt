@@ -1,0 +1,19 @@
+Both Task 1 and Task 3 have been implemented using Breadth Fast Crawler technique, i.e. that pages at a shallower depth are more important than deeper ones, also, within each individual webpage. This fact helps us to deduce that the links available at the beginning of the resulting crawled-lists of both the web crawlers are essential to those two independent crawling as they are more relevant to the topics and are closer to their respective seeds, provided that the result list has been maintained using First In First Out technique, i.e. link crawled first have been inserted first in the list.
+
+But the number of links available at a particular depth can vary for both the lists. For instance Task1 result list might have 200 urls at depth 3 and Task3 result list might have 400 urls at depth 3. Hence during the merge process, we will insert unique links alternatively from both the result lists into our final merged list depth-wise and prior to changing our depth to next level, we will ensure that the extra urls in Task3 result list are inserted in the mergedlist.
+
+Inserting the urls alternatively from both the Task crawled lists ensures that the merged list contains the urls in a sorted manner as per their depth which also means as per their relevance.  Before changing the depth, inserting the extra number of urls for a particular Task list at a particular depth, ensures that the urls are stored in a depth-wise manner.
+
+So as per the question if we have to merge the result sets of Task1 and Task3 into a list of 1000 links with minimum loss of information, we can follow the given procedure :-
+
+Let Task1List be the result list of Task1 and Task3List be the result list of Task3 and MergeList be the resulting merged list.
+
+Step 1 -> Initiate the current_depth to be 1
+Step 2 -> Check whether the current_size of the MergeList is lesser than or equal to 1000 and whether size of Task1List or TaskList2 is greater than 0
+Step 3 -> Fetch a link from each of the Task1List and Task2List for the current_depth
+Step 4 -> Check whether the links are unique and whether the links exist in MergeList or not
+Step 5 -> If the links are unique and they do not exist in the MergeList, insert them in the MergeList and increase current_size by 2, decrement size of Task1List and TaskList2 by 1
+Step 6 -> If both the links are same and it does not exist in MergeList, insert the link in the MergeList and increase the current_size by 1, decrement size of Task1List and TaskList2 by 1
+Step 7 -> Go to Step 2 and Repeat until all the urls from Task1List and Task2List for the current_depth is inserted in the MergeList or until the current_size of the MergeList is greater than 1000
+Step 8 -> Increment the current_depth by 1
+Step 9 -> Go to Step 2 and repeat until the current_size of the MergeList is equal to 1000

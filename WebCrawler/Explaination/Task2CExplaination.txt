@@ -1,0 +1,27 @@
+Breadth First Crawling(BFC) - This method traverses through all those urls which are present in the same level first, in this case all those urls present in the same page from top to bottom order. Once a url is crawled, all the links retrieved from crawling that url is added at the bottom of the frontier list. Hence, after all the urls in the same page has been crawled, it moves to the next url that has been retrieved from the crawling of the first link in that page and the process continues. This ensures that the majority of the crawled links are found near the seed page and are more relevant to the topic. This method also ensures that ONLY those urls are ADDED in the crawled list, which have ALREADY BEEN CRAWLED.  This process is beneficial if the crawling is focused and limited to a certain depth because BFC requires alot of space compared to IDDS. The BFC stores all the urls in frontier list even if they are not crawled in future. The first five links of this task crawled is as follows:-
+
+
+1.	https://en.wikipedia.org/wiki/Sustainable_energy
+2.	https://en.wikipedia.org/wiki/Passive_solar_building_design
+3.	https://en.wikipedia.org/wiki/Solar_energy
+4.	https://en.wikipedia.org/wiki/Solar_heating
+5.	https://en.wikipedia.org/wiki/Solar_photovoltaics
+
+
+Depth First Crawling - Also known as iterative deepening depth-first search (IDDS),This method traverses through the first url, fetches all the links from that url, then append the new crawler-list of urls at the top of the frontier list, thus making the newly scraped urls priority number one for crawling. Then the process repeats until the depth of the url to be crawled matches the specified number of depth allowed for crawling. Once the maximum depth is reached, the program ADDS the particular url in the crawled list WITHOUT ACTUALLY CRAWLING it and backtracks to the previous level and then fetch the next url of the crawler list of that depth and repeat the process. This method moves away from the seed page with each increment in the depth and since the seed page contains the most relevant urls, the number of focused urls reduces in number. Most of the crawling for focused urls are concentrated near the deeper depths, instead of concentrating the crawling near the shallower depth like BFC which affects the efficieny. This process is beneficial if the crawling is not focused and there is no boundary for the maximum number of urls to be crawled or if maximum depth is not mentioned. The first five links of this task crawled is as follows:-
+
+1.	https://en.wikipedia.org/wiki/Sustainable_energy
+2.	https://en.wikipedia.org/wiki/Passive_solar_building_design
+3.	https://en.wikipedia.org/wiki/Solar_energy
+4.	https://en.wikipedia.org/wiki/Solar_Energy_(journal)
+5.	https://en.wikipedia.org/wiki/Solar_heating
+
+
+The first link is the seed page and the second url is the first url retrieved by crawling the seed page, hence the result for both BFS and IDDS is same till 2nd point. Now in BFC, all the urls listed below the seed page are fetched from the seed page itself, where as the in result list of IDDS, the third url is fetched from second, the fourth is fetched from third and the fifth has been retrieved from the fourth url.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+COMPARISON OF CRAWLED LIST SIZE for BFC and IDDS
+---------------------------------------------------
+
+The total number of urls retrieved via BFC is 1000, where as the total number of urls crawled via IDDS is 630. The total number of url is less in case of IDDS, because in this method, when the program reaches the maximum depth, it adds the url in the already-crawled-list without actually crawling it or fetching new links from it. Hence when the program backtracks from the maximum depth to its previous levels and comes across the same url at some other depth, it ignores the url as the url is present in the already-crawled-list and considers it to be a duplicate. Thus all those focused urls which could have been fetched via crawling that particular url is not added in the list. For example if we consider the resultset mentioned above, "https://en.wikipedia.org/wiki/Solar_heating" url is found at depth 5 for IDDS method and is added in the crawled-list without fetching the list of links from this particular url. Now when the program finally backtracks to say level 2 and again comes across this particular url, it does not crawl it and thus the entire hierarchy of links are lost, which in turn reduces the dataset of IDDS considerably. Whereas in case of BFC, only those links are added in the crawled list, which have been actually crawled to fetch new links, hence no dataset is lost.
